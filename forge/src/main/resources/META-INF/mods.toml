@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "Apache 2.0"
+
+[[mods]]
+modId = "ad_astra_starry_sea"
+version = "${version}"
+displayName = "Ad Astra: Starry Sea"
+authors = "zeutd"
+description = '''
+A mod adding space station warping and maybe Dyson Sphere.
+'''
+#logoFile = ""
+
+[[dependencies.ad_astra_starry_sea]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.ad_astra_starry_sea]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.ad_astra_starry_sea]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.2.14,)"
+ordering = "AFTER"
+side = "BOTH"
