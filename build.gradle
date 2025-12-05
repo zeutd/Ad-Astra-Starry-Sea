@@ -1,6 +1,6 @@
 plugins {
     id 'java' apply true
-    id 'dev.architectury.loom' version '1.11-SNAPSHOT' apply false
+    id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
 }
@@ -73,9 +73,14 @@ subprojects {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         mappings loom.officialMojangMappings()
 
+        modApi(group: "com.teamresourceful.resourcefullib", name: "resourcefullib-$modLoader-$minecraft_version", version: resourcefulLibVersion)
+        modApi(group: "com.teamresourceful.resourcefulconfig", name: "resourcefulconfig-$modLoader-$minecraft_version", version: resourcefulConfigVersion)
+        modApi(group: "earth.terrarium.botarium", name: "botarium-$modLoader-$minecraft_version", version: botariumVersion)
+
         compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
         implementation(include("io.github.llamalad7:mixinextras-$modLoader:0.5.0"))
-        modImplementation group: "earth.terrarium.adastra", name: "ad_astra-$modLoader-$minecraft_version", version: ad_astra_version
+
+        modImplementation group: "earth.terrarium.adastra", name: "ad_astra-$modLoader-$minecraft_version", version: ad_astra_version, transitive: false
     }
 
     java {

@@ -2,6 +2,17 @@ architectury {
     common rootProject.enabled_platforms.split(',')
 }
 
+def generatedResources = file("src/generated")
+
+sourceSets {
+    main {
+        resources { // include generated resources in resources
+            srcDir(generatedResources)
+            exclude(".cache/**")
+        }
+    }
+}
+
 dependencies {
     // We depend on Fabric Loader here to use the Fabric @Environment annotations,
     // which get remapped to the correct annotations on each platform.

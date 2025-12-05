@@ -1,0 +1,6 @@
+{
+  "parent": "ad_astra_starry_sea:template/thruster",
+  "textures": {
+    "0": "ad_astra_starry_sea:block/steel_thruster"
+  }
+}
