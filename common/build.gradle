@@ -2,15 +2,8 @@ architectury {
     common rootProject.enabled_platforms.split(',')
 }
 
-def generatedResources = file("src/generated")
-
-sourceSets {
-    main {
-        resources { // include generated resources in resources
-            srcDir(generatedResources)
-            exclude(".cache/**")
-        }
-    }
+loom {
+    accessWidenerPath = file("src/main/resources/aass.accesswidener")
 }
 
 dependencies {
@@ -20,4 +13,5 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+
 }

@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "texture",
-		"particle": "texture"
+		"0": "ad_astra_starry_sea:block/steel_thruster",
+		"particle": "ad_astra_starry_sea:block/steel_thruster_lit"
 	},
 	"elements": [
 		{
@@ -16,7 +16,7 @@
 				"east": {"uv": [8, 0, 12, 1], "texture": "#0"},
 				"south": {"uv": [8, 0, 12, 1], "texture": "#0"},
 				"west": {"uv": [8, 0, 12, 1], "texture": "#0"},
-				"up": {"uv": [4, 4, 0, 0], "texture": "#0"},
+				"up": {"uv": [8, 4, 4, 0], "texture": "#0"},
 				"down": {"uv": [4, 0, 0, 4], "texture": "#0"}
 			}
 		},
@@ -63,10 +63,10 @@
 			"to": [16, 16, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 12, 0]},
 			"faces": {
-				"north": {"uv": [8, 0, 12, 1], "texture": "#0"},
-				"east": {"uv": [8, 0, 12, 1], "texture": "#0"},
-				"south": {"uv": [8, 0, 12, 1], "texture": "#0"},
-				"west": {"uv": [8, 0, 12, 1], "texture": "#0"},
+				"north": {"uv": [8, 4, 12, 5], "texture": "#0"},
+				"east": {"uv": [8, 4, 12, 5], "texture": "#0"},
+				"south": {"uv": [8, 4, 12, 5], "texture": "#0"},
+				"west": {"uv": [8, 4, 12, 5], "texture": "#0"},
 				"up": {"uv": [8, 4, 4, 0], "texture": "#0"},
 				"down": {"uv": [8, 0, 4, 4], "texture": "#0"}
 			}

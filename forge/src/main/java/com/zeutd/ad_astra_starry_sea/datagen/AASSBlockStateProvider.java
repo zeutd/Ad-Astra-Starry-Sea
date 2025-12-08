@@ -14,8 +14,9 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import static com.zeutd.ad_astra_starry_sea.common.blocks.ThrusterBlock.LIT;
 import static net.minecraft.world.level.block.DirectionalBlock.FACING;
-
+@SuppressWarnings("removal")
 public class AASSBlockStateProvider extends BlockStateProvider {
     public AASSBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, AdAstraStarrySea.MOD_ID, exFileHelper);
@@ -30,14 +31,40 @@ public class AASSBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block, models().getBuilder("block/%s".formatted(name(block))));
         getVariantBuilder(block).forAllStates(state -> {
             Direction facing = state.getValue(FACING);
+            boolean lit = state.getValue(LIT);
+            String loc = "block/%s%s".formatted(name(block), lit ? "_lit" : "");
             return ConfiguredModel.builder()
                     .modelFile(
-                            models().getBuilder("block/%s".formatted(name(block)))
-                            .texture("0", modLoc("block/%s".formatted(name(block))))
+                            models().getBuilder(loc)
+                            .texture("0", modLoc(loc))
+                            .texture("particle", modLoc("block/%s".formatted(name(block))))
                                     .parent(models().getExistingFile(modLoc("template/thruster")))
                     )
                     .rotationY(facing.getAxis() != Direction.Axis.Y ? (int) facing.toYRot() : 0)
-                    .rotationX(facing.getAxis() == Direction.Axis.Y ? (facing == Direction.UP ? 180 : 90) : 90)
+                    .rotationX(facing.getAxis() == Direction.Axis.Y ? (facing == Direction.UP ? 180 : 0) : 90)
+                    .build();
+        });
+    }
+
+    public void machine(Block block) {
+        simpleBlockItem(block, models().getBuilder("block/%s_on".formatted(name(block))));
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(MachineBlock.FACING);
+            boolean lit = state.getValue(MachineBlock.LIT);
+            String name = this.name(block);
+            ResourceLocation texture = modLoc((lit ? "block/%s_front_on" : "block/%s_front").formatted(name, name));
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().getBuilder(lit ? name + "_on" : name)
+                            .texture("down", modLoc("block/machine_bottom"))
+                            .texture("up", modLoc("block/machine_top"))
+                            .texture("north", texture)
+                            .texture("south", modLoc("block/machine_side"))
+                            .texture("east", modLoc("block/machine_side"))
+                            .texture("west", modLoc("block/machine_side"))
+                            .texture("particle", texture)
+                            .parent(models().getExistingFile(new ResourceLocation("block/cube"))))
+                    .rotationY((int) (facing.toYRot() + 180) % 360)
                     .build();
         });
     }

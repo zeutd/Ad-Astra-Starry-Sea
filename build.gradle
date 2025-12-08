@@ -1,5 +1,5 @@
 plugins {
-    id 'java' apply true
+    id 'java'
     id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
@@ -8,6 +8,8 @@ plugins {
 architectury {
     minecraft = project.minecraft_version
 }
+
+project.ext.generatedResources = "src/generated/resources"
 
 allprojects {
     group = rootProject.maven_group
@@ -81,6 +83,12 @@ subprojects {
         implementation(include("io.github.llamalad7:mixinextras-$modLoader:0.5.0"))
 
         modImplementation group: "earth.terrarium.adastra", name: "ad_astra-$modLoader-$minecraft_version", version: ad_astra_version, transitive: false
+    }
+
+    sourceSets {
+        main {
+            resources.srcDir project(":common").file(rootProject.generatedResources)
+        }
     }
 
     java {

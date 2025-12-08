@@ -1,8 +1,7 @@
 package com.zeutd.ad_astra_starry_sea;
 
-import com.zeutd.ad_astra_starry_sea.common.AASSBlocks;
-import com.zeutd.ad_astra_starry_sea.common.AASSCreativeTab;
-import com.zeutd.ad_astra_starry_sea.common.AASSItems;
+import com.zeutd.ad_astra_starry_sea.common.*;
+import earth.terrarium.adastra.common.registry.ModEntityTypes;
 import net.minecraft.resources.ResourceLocation;
 
 public final class AdAstraStarrySea {
@@ -16,5 +15,7 @@ public final class AdAstraStarrySea {
         AASSBlocks.BLOCKS.init();
         AASSItems.ITEMS.init();
         AASSCreativeTab.TABS.init();
+        AASSBlockEntityTypes.BLOCK_ENTITY_TYPES.init();
+        AASSMenus.MENUS.init();
     }
 }

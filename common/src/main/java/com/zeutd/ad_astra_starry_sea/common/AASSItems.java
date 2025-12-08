@@ -15,4 +15,7 @@ public class AASSItems {
     public static final RegistryEntry<Item> STEEL_THRUSTER = ITEMS.register("steel_thruster", () -> {
         return new BlockItem((Block) AASSBlocks.STEEL_THRUSTER.get(), new Item.Properties());
     });
+    public static final RegistryEntry<Item> SPACE_STATION_CONTROLLER = ITEMS.register("space_station_controller", () -> {
+        return new BlockItem((Block) AASSBlocks.SPACE_STATION_CONTROLLER.get(), new Item.Properties());
+    });
 }
