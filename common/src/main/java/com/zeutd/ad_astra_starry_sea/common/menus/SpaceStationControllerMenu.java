@@ -13,27 +13,31 @@ public class SpaceStationControllerMenu extends MachineMenu<SpaceStationControll
     }
 
     protected int getContainerInputEnd() {
-        return 2;
-    }
-
-    protected int getInventoryStart() {
-        return 2;
-    }
-
-    protected int startIndex() {
         return 1;
     }
 
+    protected int getInventoryStart() {
+        return 1;
+    }
+
+    protected int startIndex() {
+        return 0;
+    }
+
     public int getPlayerInvYOffset() {
-        return 107;
+        return 109;
+    }
+
+    public int getPlayerInvXOffset(){
+        return 27;
     }
 
     protected void addMenuSlots() {
         super.addMenuSlots();
-        this.addSlot(new Slot(this.entity, 1, 80, 33));
+        this.addSlot(new Slot(this.entity, 1, 116, 33));
     }
 
     protected void addConfigSlots() {
-        this.addConfigSlot(new EnergyConfiguration(0, 147, 24, (this.entity).getEnergyStorage()));
+        this.addConfigSlot(new EnergyConfiguration(0, 182, 24, (this.entity).getEnergyStorage()));
     }
 }

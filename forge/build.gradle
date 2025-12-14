@@ -4,7 +4,7 @@ plugins {
 
 loom {
     forge {
-        mixinConfig "ad_astra_starry_sea.mixins.json"
+        //mixinConfig "ad_astra_starry_sea.mixins.json"
     }
 
     accessWidenerPath = project(":common").loom.accessWidenerPath
@@ -51,6 +51,12 @@ dependencies {
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
+
+    modLocalRuntime(group: "mezz.jei", name: "jei-$minecraft_version-forge", version: jeiVersion) {
+        transitive = false
+    }
+
+    modLocalRuntime(group: "maven.modrinth", name: "jade", version: "2iRQrBk4")
 }
 
 processResources {

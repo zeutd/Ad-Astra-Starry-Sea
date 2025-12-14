@@ -11,7 +11,5 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 @Mixin(MenuScreens.class)
 public interface MenuScreensInvoker {
     @Invoker
-    public static <M extends AbstractContainerMenu, U extends Screen & MenuAccess<M>> void callRegister(MenuType<? extends M> menuType, MenuScreens.ScreenConstructor<M, U> screenConstructor) {
-
-    }
+    public static <M extends AbstractContainerMenu, U extends Screen & MenuAccess<M>> void callRegister(MenuType<? extends M> menuType, MenuScreens.ScreenConstructor<M, U> screenConstructor) {}
 }

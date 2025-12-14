@@ -1,7 +1,9 @@
 package com.zeutd.ad_astra_starry_sea.fabric;
 
 import com.zeutd.ad_astra_starry_sea.AdAstraStarrySea;
+import com.zeutd.ad_astra_starry_sea.client.AdAstraStarrySeaClient;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 
 public final class AdAstraStarrySeaFabric implements ModInitializer {
     @Override
@@ -12,5 +14,7 @@ public final class AdAstraStarrySeaFabric implements ModInitializer {
 
         // Run our common setup.
         AdAstraStarrySea.init();
+
+        WorldRenderEvents.AFTER_TRANSLUCENT.register(ctx -> AdAstraStarrySeaClient.render(ctx.matrixStack(), ctx.camera()));
     }
 }

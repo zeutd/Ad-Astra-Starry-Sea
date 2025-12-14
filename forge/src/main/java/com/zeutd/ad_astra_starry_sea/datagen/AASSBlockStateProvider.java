@@ -5,7 +5,6 @@ import com.zeutd.ad_astra_starry_sea.AdAstraStarrySea;
 import com.zeutd.ad_astra_starry_sea.common.AASSBlocks;
 import earth.terrarium.adastra.common.blocks.base.MachineBlock;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -14,8 +13,8 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import static com.zeutd.ad_astra_starry_sea.common.blocks.ThrusterBlock.FACING;
 import static com.zeutd.ad_astra_starry_sea.common.blocks.ThrusterBlock.LIT;
-import static net.minecraft.world.level.block.DirectionalBlock.FACING;
 @SuppressWarnings("removal")
 public class AASSBlockStateProvider extends BlockStateProvider {
     public AASSBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -25,6 +24,7 @@ public class AASSBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         AASSBlocks.THRUSTERS.stream().map(RegistryEntry::get).forEach(this::thruster);
+        machine(AASSBlocks.SPACE_STATION_CONTROLLER.get());
     }
 
     private void thruster(Block block){

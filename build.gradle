@@ -23,6 +23,7 @@ subprojects {
     apply plugin: 'maven-publish'
 
     String modLoader = project.name
+    boolean isCommon = modLoader == "common"
     base {
         // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.
         archivesName = "$rootProject.archives_name-$project.name"
@@ -83,6 +84,18 @@ subprojects {
         implementation(include("io.github.llamalad7:mixinextras-$modLoader:0.5.0"))
 
         modImplementation group: "earth.terrarium.adastra", name: "ad_astra-$modLoader-$minecraft_version", version: ad_astra_version, transitive: false
+//        if (!isCommon){
+//            modImplementation(
+//                    group: "earth.terrarium.athena",
+//                    name: "athena-$modLoader-$minecraft_version",
+//                    version: athenaVersion
+//            )
+//            modImplementation(
+//                    group: "vazkii.patchouli",
+//                    name: "Patchouli",
+//                    version: "$minecraft_version-$patchouliVersion-${modLoader.toUpperCase()}"
+//            )
+//        }
     }
 
     sourceSets {

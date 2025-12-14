@@ -1,5 +1,9 @@
-// 1.20.1	2025-12-05T19:13:36.1259359	Block States: ad_astra_starry_sea
+// 1.20.1	2025-12-12T13:22:16.6694343	Block States: ad_astra_starry_sea
+1f69c61fdfd94cb2bd86529ff1b0ca356b826071 assets/ad_astra_starry_sea/blockstates/space_station_controller.json
 c83772f5cf736ad254729f43f1d2e68b19911b9d assets/ad_astra_starry_sea/blockstates/steel_thruster.json
+e5941fa8fb17a899c50e74af24a8e0146c14b139 assets/ad_astra_starry_sea/models/block/space_station_controller.json
+3cd2a4a266b7fb66456aa33e9c459ee10c35b077 assets/ad_astra_starry_sea/models/block/space_station_controller_on.json
 abb6c27b9e567d196e3c9939ac74a34f93320406 assets/ad_astra_starry_sea/models/block/steel_thruster.json
 ed262124641e95d544a9e8f0882f4ea0065f2cd3 assets/ad_astra_starry_sea/models/block/steel_thruster_lit.json
+26fd90aff280f7d4c3ecd4122de35646034d8a43 assets/ad_astra_starry_sea/models/item/space_station_controller.json
 99fa7ff454d21697055e9318992665d652af004f assets/ad_astra_starry_sea/models/item/steel_thruster.json

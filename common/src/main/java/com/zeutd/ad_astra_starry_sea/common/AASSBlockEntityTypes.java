@@ -5,6 +5,7 @@ import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import com.zeutd.ad_astra_starry_sea.AdAstraStarrySea;
 import com.zeutd.ad_astra_starry_sea.common.blockentities.SpaceStationControllerBlockEntity;
+import com.zeutd.ad_astra_starry_sea.common.blockentities.ThrusterBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -18,6 +19,13 @@ public class AASSBlockEntityTypes {
             () -> createBlockEntityType(
                     SpaceStationControllerBlockEntity::new,
                     AASSBlocks.SPACE_STATION_CONTROLLER
+            )
+    );
+    public static final RegistryEntry<BlockEntityType<ThrusterBlockEntity>> THRUSTER = BLOCK_ENTITY_TYPES.register(
+            "thruster",
+            () -> createBlockEntityType(
+                    ThrusterBlockEntity::new,
+                    AASSBlocks.STEEL_THRUSTER
             )
     );
     public static <E extends BlockEntity> BlockEntityType<E> createBlockEntityType(BlockEntityType.BlockEntitySupplier<E> factory, ResourcefulRegistry<Block> registry) {
