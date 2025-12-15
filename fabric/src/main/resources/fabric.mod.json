@@ -18,7 +18,7 @@
       "com.zeutd.ad_astra_starry_sea.fabric.AdAstraStarrySeaFabric"
     ],
     "client": [
-      "com.zeutd.ad_astra_starry_sea.fabric.client.AdAstraStarrySeaFabricClient"
+      "com.zeutd.ad_astra_starry_sea.client.fabric.AdAstraStarrySeaFabricClient"
     ]
   },
   "mixins": [

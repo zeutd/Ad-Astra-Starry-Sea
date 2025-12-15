@@ -41,6 +41,8 @@ public class ThrusterBlock extends BasicEntityBlock {
         super(properties, true);
     }
 
+
+
     public BlockState rotate(BlockState blockState, Rotation rotation) {
         return (BlockState)blockState.setValue(FACING, rotation.rotate((Direction)blockState.getValue(FACING)));
     }

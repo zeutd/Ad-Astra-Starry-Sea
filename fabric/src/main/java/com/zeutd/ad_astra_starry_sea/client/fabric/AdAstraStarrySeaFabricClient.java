@@ -1,4 +1,4 @@
-package com.zeutd.ad_astra_starry_sea.fabric.client;
+package com.zeutd.ad_astra_starry_sea.client.fabric;
 
 import com.zeutd.ad_astra_starry_sea.client.AdAstraStarrySeaClient;
 import net.fabricmc.api.ClientModInitializer;
